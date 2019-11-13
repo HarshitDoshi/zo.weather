@@ -3,13 +3,11 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'location.dart';
 
-//7c0260ffc687be364f07a25014ff1175
-
 Future<Weather> fetchWeather() async {
   Location locationData = await fetchLocation();
 
   final response = await http.get(
-    'https://api.openweathermap.org/data/2.5/weather?lat=${locationData.currentLatitude}&lon=${locationData.currentLongitude}&units=metric&APPID=7c0260ffc687be364f07a25014ff1175',
+    'https://api.openweathermap.org/data/2.5/weather?lat=${locationData.currentLatitude}&lon=${locationData.currentLongitude}&units=metric&APPID=YOUR_API_KEY_HERE',
   );
 
   if (response.statusCode == 200) {
